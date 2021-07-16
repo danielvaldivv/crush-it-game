@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.phone {
+    position: relative;
+    border: 5px solid #333;
+    border-radius: 40px;
+    height: 600px;
+    width: 300px;
+    background-color: #CCEFFF;
+    box-shadow: 0 19px 38px rgb(80, 80, 80);
+}
+.layer-1, .layer-2, .layer-3, .layer-4, .layer-5, .layer-6, .layer-7, .layer-8, .layer-9, .layer-10{
+    position: absolute;
+    background: white;
+    bottom: 0;
+}
+.layer-1 {
+    z-index: 1;
+    height: 450px;
+    width: 80px;
+    right: 60px;
+}
+.layer-2 {
+    z-index: 2;
+    height: 450px;
+    width: 80px;
+    left: 60px;
+}
+.layer-3 {
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 400px;
+    background:saddlebrown;
+    border-top: 25px solid yellowgreen;
+    border-radius: 10px;
+}
+.layer-4 {
+    z-index: 4;
+    height: 360px;
+    width: 80px;
+    left: 20px;
+    border-bottom-left-radius: 33px;
+}
+.layer-5 {
+    z-index: 5;
+    height: 360px;
+    width: 75px;
+    left: 115px;
+}
+.layer-6 {
+    z-index: 6;
+    left: 0;
+    bottom: 30px;
+    width: 220px;
+    height: 280px;
+    background:saddlebrown;
+    border-top: 25px solid yellowgreen;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.layer-7 {
+    z-index: 7;
+    height: 270px;
+    width: 80px;
+    right: 25px;
+    border-bottom-right-radius: 33px;
+}
+.layer-8 {
+    z-index: 8;
+    right: 0;
+    bottom: 30px;
+    width: 140px;
+    height: 180px;
+    background:saddlebrown;
+    border-top: 25px solid yellowgreen;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.layer-9 {
+    z-index: 9;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 290px;
+    height: 100px;
+    background:saddlebrown;
+    border-top: 15px solid yellowgreen;
+    border-radius: 10px;
+    border-bottom-left-radius: 33px;
+    border-bottom-right-radius: 33px;
+}
