@@ -6,6 +6,7 @@
 
 html {
     font-size: 62.5%;
+    font-family: sans-serif;
 }
 
 body {
@@ -13,6 +14,19 @@ body {
     width: 100%;
     display: grid;
     place-items: center;
+    counter-reset: score;
+}
+h2 {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 70px;
+    left: 100px;
+}
+h3 {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 100px;
+    left: 120px;
 }
 .phone {
     position: relative;
@@ -25,7 +39,7 @@ body {
 }
 .layer-1, .layer-2, .layer-3, .layer-4, .layer-5, .layer-6, .layer-7, .layer-8, .layer-9, .layer-10{
     position: absolute;
-    background: white;
+    background: rgba(255, 255, 255, 0);
     bottom: 0;
 }
 .layer-1 {
@@ -33,12 +47,66 @@ body {
     height: 450px;
     width: 80px;
     right: 60px;
+    animation-name: layer1;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
+@keyframes layer1 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+.phone input[type=checkbox] {
+    position: absolute;
+    appearance: none;
+    top: 0;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.phone input[type=checkbox]:focus {
+    appearance: none;
+    outline: none;
+}
+
+.phone input[type=checkbox]:checked {
+    counter-increment: score;
+}
+
+.score::after {
+    content: counter(score);
+}
+
 .layer-2 {
     z-index: 2;
     height: 450px;
     width: 80px;
     left: 60px;
+
+    animation-name: layer2;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer2 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
 }
 .layer-3 {
     z-index: 3;
@@ -57,12 +125,44 @@ body {
     width: 80px;
     left: 20px;
     border-bottom-left-radius: 33px;
+
+    animation-name: layer4;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer4 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
 }
 .layer-5 {
     z-index: 5;
     height: 360px;
     width: 75px;
     left: 115px;
+
+    animation-name: layer5;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer5 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
 }
 .layer-6 {
     z-index: 6;
@@ -77,10 +177,26 @@ body {
 }
 .layer-7 {
     z-index: 7;
-    height: 270px;
-    width: 80px;
+    height: 260px;
+    width: 75px;
     right: 25px;
     border-bottom-right-radius: 33px;
+
+    animation-name: layer7;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer7 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
 }
 .layer-8 {
     z-index: 8;
@@ -105,4 +221,88 @@ body {
     border-radius: 10px;
     border-bottom-left-radius: 33px;
     border-bottom-right-radius: 33px;
+}
+
+.head {
+    background: rgb(43, 102, 43);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.eye-white {
+    position: absolute;
+    top: 10px;
+    left: 22px;
+    background: #fff;
+    border: 3px solid rgb(0, 48, 0) ;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {
+        height: 35px;
+    }
+    5%{
+        transform: translate(0px, 20px);
+        height: 5px;
+        
+    }
+    10%{
+        transform: translate(0px, 0px);
+        height: 35px;
+    }
+}
+.eye-black {
+    position: absolute;
+    top: 15px;
+    left: 34px;
+    background: rgb(144, 153, 13);
+    border: 4px solid rgb(0, 0, 0) ;
+    border-radius: 50%;
+    width: 10px;
+    height: 25px;
+
+    animation-name: blinkmin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blinkmin {
+    0% {
+        height: 25px;
+    }
+    5%{
+        transform: translate(0px, 15px);
+        height: 5px;
+        
+    }
+    10%{
+        transform: translate(0px, 0px);
+        height: 25px;
+    }
+}
+.skin-point1 {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background: rgb(1, 71, 1);
+    width: 10px;
+    height: 13px;
+    border-radius: 50%;
+}
+.skin-point2 {
+    position: absolute;
+    top: 40px;
+    left: 55px;
+    background: rgb(1, 71, 1);
+    width: 20px;
+    height: 13px;
+    border-radius: 50%;
 }
